@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurjyoth Singh - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    /* Light Mode Colors */
+    --primary-color: #8B0000;
+    --secondary-color: #D3D3D3;
+    --dark-color: #1a1a1a;
+    --light-color: #F5F5F5;
+    --accent-color: #FFA07A;
+    --bg-color: #F5F5F5;
+    --text-color: #2c2c2c;
+    --card-bg: #ffffff;
+    --gradient-1: linear-gradient(135deg, #8B0000 0%, #FFA07A 100%);
+    --gradient-2: linear-gradient(135deg, #FFA07A 0%, #8B0000 100%);
+    --bg-gradient: linear-gradient(135deg, #F5F5F5 0%, #FFF 100%);
+    --nav-bg: rgba(245, 245, 245, 0.95);
+    --card-border: rgba(139, 0, 0, 0.1);
+    --card-shadow: 0 4px 15px rgba(139, 0, 0, 0.1);
+    --hover-shadow: 0 8px 25px rgba(139, 0, 0, 0.2);
+}
+
+/* Dark Mode Colors */
+[data-theme="dark"] {
+    --primary-color: #8B0000;
+    --secondary-color: #D3D3D3;
+    --dark-color: #F5F5F5;
+    --light-color: #F5F5F5;
+    --accent-color: #FFA07A;
+    --bg-color: #1a1a1a;
+    --text-color: #D3D3D3;
+    --card-bg: rgba(38, 38, 38, 0.9);
+    --gradient-1: linear-gradient(135deg, #8B0000 0%, #FFA07A 100%);
+    --gradient-2: linear-gradient(135deg, #FFA07A 0%, #8B0000 100%);
+    --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #262626 100%);
+    --nav-bg: rgba(26, 26, 26, 0.95);
+    --card-border: rgba(139, 0, 0, 0.2);
+    --card-shadow: 0 4px 15px rgba(255, 51, 102, 0.05);
+    --hover-shadow: 0 8px 25px rgba(255, 51, 102, 0.2);
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-color);
+    background: var(--bg-gradient);
+    transition: all 0.3s ease;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    padding: 1rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--card-border);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links li {
+    margin: 0 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-1);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    padding: 6rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Home Section */
+#home {
+    background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.95)),
+                radial-gradient(circle at top right, var(--primary-color), transparent 70%),
+                radial-gradient(circle at bottom left, var(--accent-color), transparent 70%);
+    color: var(--light-color);
+    text-align: center;
+    position: relative;
+}
+
+.home-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.home-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+    color: #8B0000;
+    text-shadow: 0 0 20px rgba(139, 0, 0, 0.5),
+                 0 0 40px rgba(139, 0, 0, 0.3),
+                 0 0 60px rgba(139, 0, 0, 0.2);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.home-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-icons {
+    animation: fadeInUp 1s ease 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-icons a {
+    color: var(--primary-color);
+    font-size: 2rem;
+    transition: all 0.3s;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.social-icons a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-1);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    color: var(--primary-color);
+}
+
+/* About Section */
+#about {
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(181, 206, 199, 0.1) 0%, rgba(124, 139, 149, 0.1) 100%);
+    z-index: 0;
+}
+
+.about-content {
+    position: relative;
+    z-index: 1;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(255, 51, 102, 0.2);
+}
+
+.about-content p {
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Skills Section */
+#skills {
+    background-color: var(--bg-color);
+    position: relative;
+    padding: 6rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+#skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(255, 160, 122, 0.05) 100%);
+    z-index: 0;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-1);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.skill-card:hover::before {
+    transform: scaleX(1);
+}
+
+.skill-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+.skill-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gradient-1);
+    transition: width 0.3s ease;
+}
+
+.skill-card:hover h3::after {
+    width: 100%;
+}
+
+.skill-card p {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.skill-card .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.skill-card .tech-stack span {
+    background: var(--card-bg);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    z-index: 4;
+    border: 2px solid var(--primary-color);
+    font-weight: 500;
+}
+
+.skill-card .tech-stack span:hover {
+    background: var(--gradient-1);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: var(--hover-shadow);
+}
+
+[data-theme="dark"] .skill-card {
+    background: rgba(28, 28, 28, 0.7);
+}
+
+/* Projects Section */
+#projects {
+    background-color: var(--bg-color);
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 2rem;
+}
+
+#projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(255, 160, 122, 0.05) 100%);
+    z-index: 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid var(--card-border);
+    position: relative;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(30px);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+}
+
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card:hover {
+    transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(139, 0, 0, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 250px;
+    background: var(--gradient-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid var(--card-border);
+    transition: all 0.5s ease;
+    padding: 2rem;
+}
+
+.project-image i {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    font-size: 3.5rem;
+    color: white !important;
+}
+
+.project-card:hover .project-image i {
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    color: white !important;
+}
+
+.project-image span {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    font-size: 3.5rem;
+    color: white !important;
+}
+
+.project-card:hover .project-image span {
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    color: white !important;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-card:hover .project-image::before {
+    transform: translateX(100%);
+}
+
+.project-info {
+    padding: 2.5rem;
+    position: relative;
+    background: var(--card-bg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.project-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-1);
+    transition: width 0.3s ease;
+}
+
+.project-card:hover .project-info h3::after {
+    width: 100%;
+}
+
+.project-info p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    opacity: 0.9;
+    flex-grow: 1;
+}
+
+.project-info .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--card-border);
+}
+
+.project-info .tech-stack span {
+    background: var(--card-bg);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.project-info .tech-stack span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-1);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.project-info .tech-stack span:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.2);
+}
+
+.project-info .tech-stack span:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.1), rgba(255, 160, 122, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--bg-color);
+}
+
+.contact-form {
+    max-width: 600px;
+    width: 100%;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(255, 51, 102, 0.1);
+    border: 1px solid rgba(255, 51, 102, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.contact-form h2 {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 51, 102, 0.2);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 51, 102, 0.2);
+}
+
+button {
+    background: var(--gradient-1);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+    width: 100%;
+}
+
+button:hover {
+    background: var(--gradient-2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    .project-card {
+        margin: 0 auto;
+        max-width: 450px;
+        min-height: 450px;
+    }
+
+    .project-info {
+        padding: 2rem;
+    }
+
+    .project-image {
+        height: 200px;
+        font-size: 3.5rem;
+    }
+
+    .project-info h3 {
+        font-size: 1.6rem;
+    }
+
+    .project-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: var(--gradient-1);
+    color: var(--light-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.3);
+}
+
+/* Profile Image Styles */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+                url('port.webp') center/cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-1);
+    opacity: 0.15;
+    transition: opacity 0.3s ease;
+}
+
+.profile-image:hover::before {
+    opacity: 0.25;
+}
+
+/* Add glow effects for dark mode */
+[data-theme="dark"] .profile-image {
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .home-content h1 {
+    color: #8B0000;
+    text-shadow: 0 0 20px rgba(139, 0, 0, 0.6),
+                 0 0 40px rgba(139, 0, 0, 0.4),
+                 0 0 60px rgba(139, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .skill-card,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .contact-form {
+    background: rgba(28, 28, 28, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 0, 0, 0.2);
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-1);
+    color: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background: var(--gradient-2);
+    transform: translateY(-3px);
+}
+
+/* Add new styles for tech stack */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-stack span {
+    background: var(--gradient-1);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.tech-stack span:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.project-info p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Add new styles for scrolling text */
+.scrolling-text {
+    height: 2.5rem;
+    overflow: hidden;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.scrolling-text-content {
+    position: absolute;
+    width: 100%;
+    animation: scrollText 22s linear infinite;
+}
+
+.scrolling-text-content span {
+    display: block;
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+    color: var(--light-color);
+    opacity: 0.9;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.scrolling-text:hover .scrolling-text-content {
+    animation-play-state: paused;
+}
+
+/* Education Section */
+#education {
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.education-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.education-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.education-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.education-info p {
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.education-info .institution {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.education-info .year {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Resume Section */
+#resume {
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+.resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+}
+
+.resume-content {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    border: 2px solid var(--card-border);
+    backdrop-filter: blur(10px);
+}
+
+.resume-content p {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gradient-1);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+    background: var(--gradient-2);
+}
+
+.download-button i {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .education-card {
+        padding: 1.5rem;
+    }
+
+    .resume-content {
+        padding: 2rem;
+    }
+
+    .resume-content p {
+        font-size: 1rem;
+    }
+} 
+    </style>
+</head>
+<body>
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">⬆️</button>
+    <!-- Navigation -->
+    <button class="theme-toggle" id="themeToggle">🌓</button>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-content">
+            <div class="profile-image"></div>
+            <h1>Gurjyoth Singh</h1>
+            <div class="scrolling-text">
+                <div class="scrolling-text-content">
+                    <span>Full Stack Developer</span>
+                    <span>AI/ML Engineer</span>
+                    <span>Cybersecurity Enthusiast</span>
+                    <span>IoT & Embedded Systems</span>
+                    <span>Full Stack Developer</span>
+                    <span>AI/ML Engineer</span>
+                    <span>Cybersecurity Enthusiast</span>
+                    <span>IoT & Embedded Systems</span>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/gurjyoth" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/gurjyoth-singh-ab0644312" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/gurjyothsingh" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>I am a results-driven Full-Stack Developer, AI/ML Engineer, and Cybersecurity Enthusiast with extensive experience in designing and implementing AI-powered solutions, IoT-driven autonomous systems, and secure web applications. I excel at solving complex real-world challenges by leveraging advanced technologies such as CNN, YOLO, TensorFlow, and embedded systems like Raspberry Pi and ESP modules.</p>
+
+            <p>My expertise includes developing precision agriculture systems using autonomous drones, building emotionally intelligent AI chatbots, and conducting ethical penetration testing to enhance cybersecurity. I am also passionate about optimizing gaming experiences through modding and enhancing simulation environments.</p>
+
+            <p>In addition to my technical skills, I am a continuous learner who explores emerging technologies, experiments with AI models, and deepens my knowledge in cybersecurity and IoT. I am committed to driving innovation and contributing to the development of transformative technology solutions.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-content">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-info">
+                        <h3>B.Sc - Computer Technology</h3>
+                        <p>Computer Science and Technology</p>
+                        <p class="institution">KG College of Arts and Science</p>
+                        <p class="year">2023 - 2026</p>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="education-info">
+                        <h3>Higher Secondary</h3>
+                        <p>Computer Applications and Arts</p>
+                        <p class="institution">Government Higher Secondary School Asokapuram</p>
+                        <p class="year">2021 - 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>Programming & Scripting</h3>
+                <p>Core Languages and Development Tools</p>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Bash/Shell Scripting</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>Full-Stack Development & APIs</p>
+                <div class="tech-stack">
+                    <span>Node.js</span>
+                    <span>Express</span>
+                    <span>MongoDB</span>
+                    <span>HTML,CSS</span>
+                    <span>JavaScript</span>
+                    <span>RESTful APIs</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>IoT & Embedded Systems</h3>
+                <p>Hardware Integration & Sensors</p>
+                <div class="tech-stack">
+                    <span>Raspberry Pi 5</span>
+                    <span>ESP-01</span>
+                    <span>ESP8266 Mini</span>
+                    <span>Arduino</span>
+                    <span>ESP32</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>UI/UX Design</h3>
+                <p>Interface Design & Prototyping</p>
+                <div class="tech-stack">
+                    <span>Wireframing&Prototyping</span>
+                    <span>UI/UX Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-helicopter"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Drone-Based ET Sensing System</h3>
+                    <p>An autonomous drone system for precision agriculture using Raspberry Pi 5, ArduPilot, and advanced sensors. Finalist at SIH 2024 and AgriDISQovery 2025 startup candidate. Features real-time data processing with CNN, YOLO, and TensorFlow for irrigation optimization.</p>
+                    <div class="tech-stack">
+                        <span>Raspberry Pi 5</span>
+                        <span>ArduPilot</span>
+                        <span>LeddarVu8</span>
+                        <span>TeAx Thermal</span>
+                        <span>NOIR Camera</span>
+                        <span>CNN</span>
+                        <span>YOLO</span>
+                        <span>TensorFlow</span>
+                        <span>IoT APIs</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="project-info">
+                    <h3>AFIYA - Emotional AI Chatbot</h3>
+                    <p>A multilingual emotional support chatbot with conversation memory and voice command capabilities. Built with OpenChat and LLaMA 34B, featuring a beautiful day-night theme interface and support for Tamil, Hindi, Punjabi, and English.</p>
+                    <div class="tech-stack">
+                        <span>OpenChat</span>
+                        <span>LLaMA 34B</span>
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>MongoDB</span>
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Crop Growth Prediction AI</h3>
+                    <p>A hybrid CNN+RNN model for predicting crop growth stages using spatial and temporal data. Combines NDVI image processing with time-series analysis of GDD and soil moisture for real-time irrigation optimization.</p>
+                    <div class="tech-stack">
+                        <span>CNN</span>
+                        <span>RNN</span>
+                        <span>Google Colab</span>
+                        <span>TensorFlow</span>
+                        <span>Pandas</span>
+                        <span>NDVI</span>
+                        <span>Time-series</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Cybersecurity Research Projects</h3>
+                    <p>Comprehensive exploration of ethical hacking including penetration testing, Wi-Fi security, and vulnerability assessment. Created custom USB Wi-Fi adapter using ESP-01 and ESP8266 Mini for network testing.</p>
+                    <div class="tech-stack">
+                        <span>Kali Linux</span>
+                        <span>Aircrack-ng</span>
+                        <span>Hashcat</span>
+                        <span>Metasploit</span>
+                        <span>Nmap</span>
+                        <span>Wireshark</span>
+                        <span>RTX 3050</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-satellite"></i> 
+                </div>
+                <div class="project-info">
+                    <h3>USB Wi-Fi Adapter for Penetration Testing</h3>
+                    <p>Engineered a custom USB Wi-Fi adapter using ESP-01 and ESP8266 Mini for network penetration testing. Established reliable Wi-Fi communication channels for security assessment scenarios.</p>
+                    <div class="tech-stack">
+                        <span>ESP-01</span>
+                        <span>ESP8266 Mini</span>
+                        <span>CH340G</span>
+                        <span>UART</span>
+                        <span>Hardware</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Game Modding & Racing Sims</h3>
+                    <p>Enhanced racing games (NFS Payback, Assetto Corsa) through custom modifications and optimizations. Improved visual fidelity and performance through personalized modding techniques.</p>
+                    <div class="tech-stack">
+                        <span>NFS Payback</span>
+                        <span>Assetto Corsa</span>
+                        <span>Python</span>
+                        <span>Modding Tools</span>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-shield-alt"></i> 
+                </div>
+                <div class="project-info">
+                    <h3>Malware Analysis System</h3>
+                    <p>Developed a comprehensive system for creating, detecting, and removing test malware in a controlled environment. Part of cybersecurity research focusing on threat detection and mitigation.</p>
+                    <div class="tech-stack">
+                        <span>Kali Linux</span>
+                        <span>Metasploit</span>
+                        <span>Python</span>
+                        <span>Malware Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="section-content">
+            <h2>Resume</h2>
+            <div class="resume-container">
+                <div class="resume-content">
+                    <p>Download my complete resume to learn more about my experience and qualifications.</p>
+                    <a href="path/to/your/resume.pdf" class="download-button" target="_blank">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <form class="contact-form" id="contactForm">
+            <h2>Get in Touch</h2>
+            <div class="form-group">
+                <input type="text" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        // Theme Toggle Functionality
+const themeToggle = document.getElementById('themeToggle');
+
+// Check for saved theme preference, otherwise use light mode
+const savedTheme = localStorage.getItem('theme') || 'light';
+
+// Apply saved theme on load
+document.documentElement.setAttribute('data-theme', savedTheme);
+themeToggle.textContent = savedTheme === 'dark' ? '🌞' : '🌓';
+
+// Toggle theme with animation
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    themeToggle.style.transform = 'rotate(360deg)';
+    setTimeout(() => {
+        themeToggle.style.transform = '';
+    }, 300);
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    themeToggle.textContent = newTheme === 'dark' ? '🌞' : '🌓';
+});
+
+// Scroll to top functionality
+const scrollTopBtn = document.getElementById('scrollTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('show');
+    } else {
+        scrollTopBtn.classList.remove('show');
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Reveal cards on scroll with staggered animation
+const revealCards = (selector) => {
+    const cards = document.querySelectorAll(selector);
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('show');
+                }, index * 100); // Stagger effect
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+};
+
+revealCards('.skill-card');
+revealCards('.project-card');
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = getComputedStyle(document.documentElement)
+            .getPropertyValue('--nav-bg');
+        navbar.style.boxShadow = getComputedStyle(document.documentElement)
+            .getPropertyValue('--card-shadow');
+    } else {
+        navbar.style.background = getComputedStyle(document.documentElement)
+            .getPropertyValue('--nav-bg');
+        navbar.style.boxShadow = 'none';
+    }
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Form submission
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! I will get back to you soon.');
+    this.reset();
+}); 
+    </script>
+</body>
+</html>
